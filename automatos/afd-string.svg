@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1860" height="1180" viewBox="0 0 1860 1180" role="img" aria-labelledby="title desc">
+  <title id="title">AFD de string e recuperação</title>
+  <desc id="desc">Sete estados correspondem a StringState. STRING_START consome a abertura; STRING_BODY e ESCAPE reconhecem conteúdo válido; ACCEPT_STRING emite token. STRING_RECOVERY e RECOVERY_ESCAPE descartam conteúdo inválido e ERROR_STRING retoma a busca. CR, LF ou EOF nos estados de conteúdo ou escape levam a ERROR_STRING sem consumir.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#283548"/></marker>
+  </defs>
+  <rect width="1860" height="1180" fill="white"/>
+  <g id="edges" fill="none" stroke="#283548" stroke-width="2.5" marker-end="url(#arrow)">
+    <path d="M40,255 L77,255"/>
+    <path d="M330,255 L527,255"/>
+    <path d="M590,200 C480,110 860,110 770,200"/>
+    <path d="M830,255 L1047,255"/>
+    <path d="M800,200 C970,90 1410,90 1665,200"/>
+    <path d="M1130,310 C1130,440 745,440 740,313"/>
+    <path d="M575,310 L575,617"/>
+    <path d="M1280,310 C1280,480 620,480 600,617"/>
+    <path d="M530,650 C360,610 360,750 527,700"/>
+    <path d="M830,675 L1047,675"/>
+    <path d="M1130,730 C1130,860 745,860 740,733"/>
+    <path d="M800,620 C920,530 1540,530 1665,617"/>
+  </g>
+  <g id="nodes" stroke="#283548" stroke-width="2.5">
+    <rect x="80" y="200" width="250" height="110" rx="18" fill="#edf2f8"/>
+    <rect x="530" y="200" width="300" height="110" rx="18" fill="#edf5f0"/>
+    <rect x="1050" y="200" width="280" height="110" rx="18" fill="#edf2f8"/>
+    <rect x="1530" y="200" width="270" height="110" rx="18" fill="#edf5f0"/>
+    <rect x="1538" y="208" width="254" height="94" rx="12" fill="none"/>
+    <rect x="530" y="620" width="300" height="110" rx="18" fill="#fff2ee"/>
+    <rect x="1050" y="620" width="280" height="110" rx="18" fill="#fff2ee"/>
+    <rect x="1530" y="620" width="270" height="110" rx="18" fill="#fff2ee"/>
+  </g>
+  <g id="labels" font-family="Arial, sans-serif" fill="#182334">
+    <text x="48" y="44" font-size="30" font-weight="bold">String e recuperação de conteúdo inválido</text>
+    <text x="48" y="82" font-size="21">Estados correspondentes a StringState em Scanner.java.</text>
+    <text x="205" y="264" text-anchor="middle" font-size="23">STRING_START</text>
+    <text x="680" y="264" text-anchor="middle" font-size="23">STRING_BODY</text>
+    <text x="1190" y="264" text-anchor="middle" font-size="23">ESCAPE</text>
+    <text x="1665" y="245" text-anchor="middle" font-size="23">ACCEPT_STRING</text>
+    <text x="1665" y="280" text-anchor="middle" font-size="21">emite STRING_LIT</text>
+    <text x="680" y="674" text-anchor="middle" font-size="23">STRING_RECOVERY</text>
+    <text x="680" y="709" text-anchor="middle" font-size="21">não emite token</text>
+    <text x="1190" y="684" text-anchor="middle" font-size="23">RECOVERY_ESCAPE</text>
+    <text x="1665" y="674" text-anchor="middle" font-size="23">ERROR_STRING</text>
+    <text x="1665" y="709" text-anchor="middle" font-size="21">retoma busca de token</text>
+    <text x="430" y="225" text-anchor="middle" font-size="21">aspas iniciais</text>
+    <text x="680" y="112" text-anchor="middle" font-size="21">caractere comum</text>
+    <text x="940" y="225" text-anchor="middle" font-size="21">barra invertida</text>
+    <text x="1230" y="85" text-anchor="middle" font-size="21">aspas de fechamento</text>
+    <text x="910" y="443" text-anchor="middle" font-size="21">escape válido</text>
+    <text x="540" y="485" text-anchor="end" font-size="21">fora do alfabeto</text>
+    <text x="540" y="518" text-anchor="end" font-size="21">registra erro e consome</text>
+    <text x="1130" y="510" text-anchor="middle" font-size="21">escape inválido</text>
+    <text x="360" y="685" text-anchor="end" font-size="21">outro caractere</text>
+    <text x="940" y="650" text-anchor="middle" font-size="21">barra invertida</text>
+    <text x="950" y="889" text-anchor="middle" font-size="21">consome o caractere escapado</text>
+    <text x="950" y="924" text-anchor="middle" font-size="20">escape inválido gera diagnóstico</text>
+    <text x="1400" y="514" text-anchor="middle" font-size="21">aspas não escapadas</text>
+    <text x="48" y="978" font-size="23" font-weight="bold">Transições de fim de linha ou arquivo</text>
+    <text x="48" y="1017" font-size="21">STRING_BODY, ESCAPE, STRING_RECOVERY ou RECOVERY_ESCAPE + CR/LF/EOF → ERROR_STRING.</text>
+    <text x="48" y="1056" font-size="21">Sem consumir CR/LF/EOF; o diagnóstico de falta de fechamento aponta para a abertura.</text>
+    <text x="48" y="1095" font-size="21">Caractere comum: ASCII permitido ou tab, exceto aspas e barra. Aspas escapadas não encerram a string.</text>
+    <text x="48" y="1134" font-size="21">Escapes válidos: aspas duplas, barra invertida, n, r e t. Na recuperação, outro caractere é consumido.</text>
+  </g>
+</svg>

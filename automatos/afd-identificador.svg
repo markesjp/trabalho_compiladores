@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">AFD de identificador e palavra reservada</title>
+  <desc id="desc">START consome uma letra ASCII ou sublinhado. ID_BODY consome letras, dígitos e sublinhado. Outro caractere ou EOF leva a ACCEPT_IDENTIFIER sem consumir. A tabela KEYWORDS classifica o lexema completo.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#283548"/></marker>
+  </defs>
+  <rect width="1200" height="500" fill="white"/>
+  <g id="edges" fill="none" stroke="#283548" stroke-width="2.5" marker-end="url(#arrow)">
+    <path d="M40,260 L67,260"/>
+    <path d="M270,260 L451,260"/>
+    <path d="M520,196 C380,100 800,100 660,196"/>
+    <path d="M725,260 L877,260"/>
+  </g>
+  <g id="nodes" stroke="#283548" stroke-width="2.5">
+    <ellipse cx="170" cy="260" rx="100" ry="70" fill="#edf2f8"/>
+    <ellipse cx="590" cy="260" rx="135" ry="75" fill="#edf5f0"/>
+    <ellipse cx="1030" cy="260" rx="150" ry="85" fill="#fcf3e6"/>
+    <ellipse cx="1030" cy="260" rx="142" ry="77" fill="none"/>
+  </g>
+  <g id="labels" font-family="Arial, sans-serif" fill="#182334">
+    <text x="48" y="44" font-size="28" font-weight="bold">Identificador e palavra reservada</text>
+    <text x="170" y="268" text-anchor="middle" font-size="24">START</text>
+    <text x="590" y="268" text-anchor="middle" font-size="24">ID_BODY</text>
+    <text x="1030" y="268" text-anchor="middle" font-size="22">ACCEPT_IDENTIFIER</text>
+    <text x="362" y="225" text-anchor="middle" font-size="22">[A-Za-z_]</text>
+    <text x="590" y="98" text-anchor="middle" font-size="22">[A-Za-z0-9_]</text>
+    <text x="802" y="211" text-anchor="middle" font-size="20">outro ou EOF</text>
+    <text x="802" y="235" text-anchor="middle" font-size="18">sem consumir</text>
+    <text x="1030" y="392" text-anchor="middle" font-size="20">consulta KEYWORDS</text>
+    <text x="1030" y="420" text-anchor="middle" font-size="20">palavra reservada ou ID</text>
+    <text x="48" y="469" font-size="20">A palavra reservada só é consultada após o lexema completo: while → WHILE; while1 → ID.</text>
+  </g>
+</svg>

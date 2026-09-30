@@ -1,0 +1,53 @@
+Evidência de execução do Checkpoint 1
+
+Ambiente: JDK 21.0.9; fontes compiladas para Java 17 (--release 17).
+Execução a partir de uma cópia limpa dos arquivos da entrega.
+A pasta out contém somente o build local e não integra o repositório nem o ZIP.
+
+COMPILAÇÃO
+Comando: javac -encoding UTF-8 -Xlint:all --release 17 -d out src/scanner/*.java test/ScannerTest.java
+Código de saída: 0
+Saída padrão: vazia
+Saída de erro: vazia (sem avisos)
+
+TESTES
+Comando: java -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -cp out ScannerTest
+Código de saída: 0
+Saída de erro: vazia
+Saída padrão:
+OK - cinco categorias e tipos específicos
+OK - todos os operadores e maximal munch
+OK - todos os delimitadores
+OK - tabela completa de palavras reservadas
+OK - case sensitivity e prefixos de keywords
+OK - lookahead não consome o próximo token
+OK - comentários entre tokens
+OK - comentário de linha termina em EOF
+OK - comentários de bloco não aninhados
+OK - trecho realista com funções e controle
+OK - caractere inválido e posição do erro
+OK - string não fechada até fim de linha
+OK - string não fechada até EOF
+OK - string terminada em barra invertida
+OK - strings válidas e lexema original
+OK - escape inválido descarta a string inteira
+OK - recuperação de string respeita aspas escapadas
+OK - alfabeto inválido dentro de string
+OK - caractere fora do alfabeto entre tokens
+OK - todos os escapes de char
+OK - chars vazios, longos e escapes inválidos
+OK - char não fechado em linha e EOF
+OK - recuperação de char respeita escape
+OK - comentário de bloco não fechado e posição
+OK - alfabeto inválido em comentários
+OK - linhas CRLF, LF, CR e coluna de tab
+OK - números e decisão sobre ponto incompleto
+OK - operadores incompletos e recuperação
+OK - entrada vazia, trivia e EOF repetível
+OK - hasNext consulta caracteres, não tokens
+OK - erros não podem ser removidos pela API
+OK - sequências longas sem recursão
+OK - trace mostra estados sem mudar tokens
+OK - integridade e impressão da classe Token
+OK - exploração determinística de 2000 entradas
+Todos os 35 testes passaram.
