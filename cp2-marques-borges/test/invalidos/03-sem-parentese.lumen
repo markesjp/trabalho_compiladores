@@ -1,0 +1,5 @@
+fn void main() {
+    if (true {
+        return;
+    }
+}

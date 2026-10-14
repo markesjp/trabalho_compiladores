@@ -1,0 +1,28 @@
+fn double calcular(int quantidade, double preco, bool ativo, char marca, string nome) {
+    double resultado = quantidade * preco;
+    if (ativo && marca != 'X') {
+        resultado = resultado / 2.0;
+    } else {
+        resultado = -resultado;
+    }
+    return resultado;
+}
+
+fn int resto(int a, int b) {
+    return a % b;
+}
+
+fn void mostrar(string nome) {
+    string copia = nome;
+    return;
+}
+
+fn void main() {
+    double total = calcular(resto(8, 3), 12.5, !false, 'A', "livro");
+    bool condicao = total >= 0.0 && total <= 100.0 || false;
+    int conta = (2 + 3) * 4 - 8 / 2;
+    char marca;
+    mostrar("fim");
+    { int local = 1; }
+    return;
+}
